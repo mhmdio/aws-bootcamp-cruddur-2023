@@ -10,7 +10,7 @@
   font-size: 16px;
   color: #fff;
   padding: 16px;
-  border-bottom: solid 1px rgb(31,36,49);
+  border-bottom: solid 1px rgb(31, 36, 49);
 }
 
 .trendings a {
@@ -26,5 +26,5 @@
 
 .trendings a span.count {
   font-size: 13px;
-  color: rgba(255,255,255,0.5)
+  color: rgba(255, 255, 255, 0.5);
 }

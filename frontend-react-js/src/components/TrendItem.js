@@ -1,4 +1,4 @@
-import './TrendItem.css';
+import "./TrendItem.css";
 
 export default function TrendItem(props) {
   const commify = (n) => {
@@ -6,8 +6,11 @@ export default function TrendItem(props) {
     const numberPart = parts[0];
     const decimalPart = parts[1];
     const thousands = /\B(?=(\d{3})+(?!\d))/g;
-    return numberPart.replace(thousands, ",") + (decimalPart ? "." + decimalPart : "");
-  }
+    return (
+      numberPart.replace(thousands, ",") +
+      (decimalPart ? "." + decimalPart : "")
+    );
+  };
 
   return (
     <a className="trending" href="#">

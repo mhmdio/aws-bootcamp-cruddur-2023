@@ -29,11 +29,11 @@ article.recover-article form {
 article.recover-article label {
   padding: 4px 0px;
   display: block;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
-article.recover-article input[type='text'],
-article.recover-article input[type='password'] {
+article.recover-article input[type="text"],
+article.recover-article input[type="password"] {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   border-radius: 4px;
@@ -53,9 +53,9 @@ article.recover-article input[type='password'] {
   margin-top: 16px;
 }
 
-article.recover-article input[type='text']:focus ,
-article.recover-article input[type='password']:focus {
-  border: solid 1px rgb(149,0,255,1);
+article.recover-article input[type="text"]:focus,
+article.recover-article input[type="password"]:focus {
+  border: solid 1px rgb(149, 0, 255, 1);
 }
 
 article.recover-article .submit {
@@ -66,20 +66,18 @@ article.recover-article .submit {
   align-items: center;
 }
 
-article.recover-article  h2 {
+article.recover-article h2 {
   text-align: center;
   color: #fff;
 }
 
-
-
-article.recover-article button[type='submit'] {
+article.recover-article button[type="submit"] {
   font-weight: 800;
   outline: none;
   border: none;
   border-radius: 6px;
   padding: 18px 28px;
   font-size: 16px;
-  background: rgba(149,0,255,1);
+  background: rgba(149, 0, 255, 1);
   color: #fff;
 }

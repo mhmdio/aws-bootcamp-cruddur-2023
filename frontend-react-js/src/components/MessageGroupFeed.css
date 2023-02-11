@@ -1,16 +1,16 @@
 section.message_groups {
   background: #000;
-  border-right: solid 1px rgb(58,63,78);
+  border-right: solid 1px rgb(58, 63, 78);
   padding: 0px;
 }
 
 .message_group_feed_heading {
   padding: 16px;
   padding-bottom: 48px;
-  border-bottom: solid 1px rgb(58,63,78);
+  border-bottom: solid 1px rgb(58, 63, 78);
 }
 
-.message_group_feed_heading .title{
+.message_group_feed_heading .title {
   color: #fff;
   font-weight: 800;
   font-size: 20px;

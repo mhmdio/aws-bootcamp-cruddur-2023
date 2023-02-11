@@ -1,10 +1,10 @@
-import {ReactComponent as ReplyIcon} from './svg/reply.svg';
+import { ReactComponent as ReplyIcon } from "./svg/reply.svg";
 
-export default function ActivityActionReply(props) { 
+export default function ActivityActionReply(props) {
   const onclick = (event) => {
-    props.setReplyActivity(props.activity)
-    props.setPopped(true)
-  }
+    props.setReplyActivity(props.activity);
+    props.setPopped(true);
+  };
 
   let counter;
   if (props.count > 0) {
@@ -13,8 +13,8 @@ export default function ActivityActionReply(props) {
 
   return (
     <div onClick={onclick} className="action activity_action_reply">
-      <ReplyIcon className='icon' />
+      <ReplyIcon className="icon" />
       {counter}
     </div>
-  )
+  );
 }
