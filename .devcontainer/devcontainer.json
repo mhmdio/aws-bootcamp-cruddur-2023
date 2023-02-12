@@ -13,7 +13,28 @@
       "vscode": {
         // Add the IDs of extensions you want installed when the container is created.
         "extensions": [
-          "streetsidesoftware.code-spell-checker"
+          "streetsidesoftware.code-spell-checker",
+          "42Crunch.vscode-openapi",
+          "ahmadawais.emoji-log-vscode",
+          "amazonwebservices.aws-toolkit-vscode",
+          "bin3377.iam-policy",
+          "hashicorp.hcl",
+          "hashicorp.terraform",
+          "hediet.vscode-drawio",
+          "Infracost.infracost",
+          "ms-azuretools.vscode-docker",
+          "ms-python.isort",
+          "ms-python.python",
+          "ms-python.vscode-pylance",
+          "PKief.material-icon-theme",
+          "RapidAPI.vscode-rapidapi-client",
+          "redhat.vscode-yaml",
+          "SteefH.terraform-documentation-links",
+          "streetsidesoftware.code-spell-checker",
+          "tfsec.tfsec",
+          "timonwong.shellcheck",
+          "trunk.io",
+          "yzhang.markdown-all-in-one"
         ]
       }
     }
