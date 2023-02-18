@@ -17,3 +17,7 @@ vscode:
   extensions:
     - 42Crunch.vscode-openapi
     - hediet.vscode-drawio
+    - exiasr.hadolint
+    - foxundermoon.shell-format
+    - timonwong.shellcheck
+    - pkief.material-icon-theme
