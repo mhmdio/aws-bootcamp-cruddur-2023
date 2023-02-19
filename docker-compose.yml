@@ -22,6 +22,11 @@ services:
     environment:
       REACT_APP_BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
     build: ./frontend-react-js
+    healthcheck:
+      test: curl --fail -s http://localhost:3000/healthz || exit 1
+      interval: 30s
+      timeout: 30s
+      retries: 3
     ports:
       - "3000:3000"
     volumes:
@@ -43,6 +48,11 @@ services:
   postgres-local:
     container_name: postgres
     image: postgres:13-alpine
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     restart: always
     environment:
       - POSTGRES_USER=postgres

@@ -1,5 +1,6 @@
 import "./App.css";
 
+import HealthPage from "./pages/HealthPage";
 import HomeFeedPage from "./pages/HomeFeedPage";
 import NotificationsFeedPage from "./pages/NotificationsFeedPage";
 import UserFeedPage from "./pages/UserFeedPage";
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeFeedPage />,
+  },
+  {
+    path: "/healthz",
+    element: <HealthPage />,
   },
   {
     path: "/notifications",
