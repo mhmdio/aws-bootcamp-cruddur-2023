@@ -1,13 +1,15 @@
 # Week 1 — App Containerization
 
-- use https://github.com/mhmdio/dotfiles-gitpod for better installation of tools
-- USE AWS Organization
-- Implement AWS GuardRails with SCPs
-- use AWS SSO instead of IAM credentials
-- download WAF report
-- complete Dockerfiles
-- complete docker-compose
+- improve Dockerfiles
+- improve docker-compose
+- improve gitpod yaml file with tasks, ports, and VSCode extensions
 - register and use Snyk for codebase security scanning
+- add notifications API and route to backend
+- add notifications page and route to frontend
+- add local dynamodb NoSQL DB and Postgre SQL DB to docker-compose
+- add SQL VSCODE extensions to gitpod yaml file and dynamodb table port 
+- add AWS VSCode extension to gitpod yaml file
+- add HealthCheck for backend
 
 ```bash
 docker build -t  backend-flask ./backend-flask
@@ -16,4 +18,9 @@ export BACKEND_URL="*"
 docker run --rm -p 4567:4567 -it  -e FRONTEND_URL -e BACKEND_URL backend-flask
 unset FRONTEND_URL="*"
 unset BACKEND_URL="*"
+```
+
+```bash
+docker-compose build
+docker-compose up
 ```

@@ -1,5 +1,12 @@
 # Week 0 — Billing and Architecture
 
+- use https://github.com/mhmdio/dotfiles-gitpod for better installation of tools
+- USE AWS Organization
+- Implement AWS GuardRails with SCPs
+- use AWS SSO instead of IAM credentials
+- download WAF report
+- work on development environment
+
 ## Development environments
 
 ### macOS
