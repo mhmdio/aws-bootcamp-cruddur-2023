@@ -43,3 +43,10 @@ brew install momento-cli
 momento account signup aws --email my.almusaddar@gmail.com --region us-east-1
 momento configure
 ```
+
+![arch-concept](../_docs/assets/arch-concept.png)
+
+---
+
+![arch-logical](../_docs/assets/arch-logical.png)
+
