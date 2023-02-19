@@ -20,11 +20,9 @@ ports:
   - name: Backend
     description: Port 4567 for the backend
     port: 4567
-    onOpen: open-preview
   - name: DynamoDB
     description: Port 8000 for the DynamoDB Local
     port: 8000
-    onOpen: open-preview
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 vscode:
@@ -37,4 +35,5 @@ vscode:
     - pkief.material-icon-theme
     - mtxr.sqltools
     - mtxr.sqltools-driver-pg
+    - amazonwebservices.aws-toolkit-vscode
 
