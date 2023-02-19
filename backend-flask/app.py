@@ -26,6 +26,10 @@ cors = CORS(
 )
 
 
+@app.route('/healthz')
+def healthz():
+    return '\nHealthy!\n\n', 200
+
 @app.route("/api/message_groups", methods=["GET"])
 def data_message_groups():
     user_handle = "andrewbrown"
