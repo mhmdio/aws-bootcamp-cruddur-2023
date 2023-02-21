@@ -10,6 +10,7 @@
 - add SQL VSCODE extensions to gitpod yaml file and dynamodb table port 
 - add AWS VSCode extension to gitpod yaml file
 - add HealthCheck for backend
+- add RollBar to Frontend
 
 ```bash
 docker build -t  backend-flask ./backend-flask
