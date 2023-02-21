@@ -1,14 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./css/index.css";
+import { Provider, ErrorBoundary } from '@rollbar/react'; // Provider imports 'rollbar'
 
 const el_main = document.getElementsByTagName("main")[0];
 const root = ReactDOM.createRoot(el_main);
+
+const rollbarConfig = {
+  accessToken: process.env.ROLLBAR_ACCESS_TOKEN,
+  environment: 'gitpod-development',
+};
+
+function TestError() {
+  const a = null;
+  return a.hello();
+}
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider config={rollbarConfig}>
+      <ErrorBoundary>
+        {/* <TestError /> */}
+        <App />
+      </ErrorBoundary>
+    </Provider>
   </React.StrictMode>
 );
 
