@@ -1,4 +1,4 @@
-import "./App.css";
+import "./css/App.css";
 
 import HealthPage from "./pages/HealthPage";
 import HomeFeedPage from "./pages/HomeFeedPage";
