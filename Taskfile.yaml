@@ -2,11 +2,48 @@
 
 version: '3'
 
+env:
+  REGION: eu-central-1
+
 vars:
-  GREETING: Hello, World!
+  DevX: GitPod
+  GRANTED_VERSION: 0.8.1
 
 tasks:
-  default:
+  granted:
+    status:
+      - test -f /usr/local/bin/granted
     cmds:
-      - echo "{{.GREETING}}"
+      - curl -OL releases.commonfate.io/granted/v{{.GRANTED_VERSION}}/granted_{{.GRANTED_VERSION}}_linux_x86_64.tar.gz
+      - sudo tar -zxvf /tmp/granted_{{.GRANTED_VERSION}}_linux_x86_64.tar.gz -C /usr/local/bin/
+      - rm /tmp/granted_{{.GRANTED_VERSION}}_linux_x86_64.tar.gz
     silent: true
+
+  granted:generate:
+    cmds:
+      - granted sso generate --sso-region $REGION https://$SSO_DOMAIN.awsapps.com/start
+  
+  aws:login:
+    silent: true
+    cmds:
+      - aws sso login --profile dev
+
+  aws:config:
+    desc: export SSO_DOMAIN=VALUE && export SSO_ACCOUNT_ID=VALUE
+    silent: true
+    status:
+      - test -d ~/.aws
+      - test -f ~/.aws/config
+    cmds:
+      - mkdir ~/.aws || true && touch ~/.aws/config || true
+      - |
+        cat > ~/.aws/config <<EOF
+        [profile dev]
+        sso_session = $SSO_DOMAIN
+        sso_account_id = $SSO_ACCOUNT_ID
+        sso_role_name = AdministratorAccess
+
+        [sso-session $SSO_DOMAIN]
+        sso_region = $REGION
+        sso_start_url = https://$SSO_DOMAIN.awsapps.com/start
+        EOF
