@@ -16,17 +16,20 @@
 |------------|-------------|
 | [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/mhmdio/aws-bootcamp-cruddur-2023)       | [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=600480996) |
 
+`dotfiles` scripts are being used to bootstrap DevX environment:
 - 🗄️ `dotfiles`: <https://github.com/mhmdio/dotfiles-gitpod>
-- 🧊 [Taskfile](https://taskfile.dev/)
-
-```bash
-sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
-```
 
 ## Tech Stack
 
 - fontend = React JS
 - backend = Flask
+
+## basic commands
+
+```bash
+aws sso login
+dc up
+```
 
 ## Screenshots
 
