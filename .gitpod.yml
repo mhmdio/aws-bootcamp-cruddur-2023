@@ -7,22 +7,26 @@ tasks:
     init: |
       cd /workspace/aws-bootcamp-cruddur-2023/backend-flask
       pip3 install -r requirements.txt
+      cd ..
   - name: Initialize Frontend
     init: |
       cd /workspace/aws-bootcamp-cruddur-2023/frontend-react-js
-      npm i  
+      npm i
+      cd .. 
 # List the ports to expose. Learn more: https://www.gitpod.io/docs/configure/workspaces/ports
 ports:
   - name: Frontend
     description: Port 3000 for the frontend
     port: 3000
-    onOpen: open-preview
+    onOpen: open-browser
   - name: Backend
     description: Port 4567 for the backend
     port: 4567
+    onOpen: ignore
   - name: DynamoDB
     description: Port 8000 for the DynamoDB Local
     port: 8000
+    onOpen: ignore
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 vscode:
