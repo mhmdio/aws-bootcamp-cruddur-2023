@@ -1,4 +1,4 @@
-FROM node:16.18
+FROM node:19.6.0-bullseye-slim
 
 ENV PORT=3000
 

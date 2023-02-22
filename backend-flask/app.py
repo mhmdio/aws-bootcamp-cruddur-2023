@@ -1,10 +1,9 @@
 import os
-import logging
+import rollbar
+import rollbar.contrib.flask
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
 from flask import got_request_exception
-import rollbar
-import rollbar.contrib.flask
 from services.create_activity import *
 from services.create_message import *
 from services.create_reply import *
@@ -22,12 +21,9 @@ backend = os.getenv("BACKEND_URL")
 origins = [frontend, backend]
 cors = CORS(
     app,
-    # resources={r"/api/*": {"origins": "*"}},
     resources={r"/api/*": {"origins": origins}},
     expose_headers="location,link",
-    # expose_headers="*",
     allow_headers="content-type,if-modified-since",
-    # allow_headers="*",
     methods="OPTIONS,GET,HEAD,POST",
 )
 

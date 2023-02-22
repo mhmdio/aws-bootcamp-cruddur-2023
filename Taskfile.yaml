@@ -10,7 +10,12 @@ vars:
   GRANTED_VERSION: 0.8.1
 
 tasks:
-  granted:
+  snyk:
+    silent: true
+    cmds:
+      - npm install snyk -g
+
+  granted:install:
     status:
       - test -f /usr/local/bin/granted
     cmds:

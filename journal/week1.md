@@ -11,6 +11,7 @@
 - add AWS VSCode extension to gitpod yaml file
 - add HealthCheck for backend
 - add RollBar to Frontend
+- update docker base images for frontend and backend based on Snyk findings
 
 ```bash
 docker build -t  backend-flask ./backend-flask
