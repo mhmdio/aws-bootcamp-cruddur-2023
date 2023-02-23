@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./css/index.css";
-import { Provider, ErrorBoundary } from '@rollbar/react'; // Provider imports 'rollbar'
+import { Provider, ErrorBoundary } from "@rollbar/react"; // Provider imports 'rollbar'
 
 const el_main = document.getElementsByTagName("main")[0];
 const root = ReactDOM.createRoot(el_main);
 
 const rollbarConfig = {
   accessToken: process.env.ROLLBAR_ACCESS_TOKEN,
-  environment: 'gitpod-development',
+  environment: "gitpod-development",
 };
 
 function TestError() {

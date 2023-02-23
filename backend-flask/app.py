@@ -1,16 +1,16 @@
 import os
+
 import rollbar
 import rollbar.contrib.flask
-from flask import Flask, request
+from flask import Flask, got_request_exception, request
 from flask_cors import CORS, cross_origin
-from flask import got_request_exception
 from services.create_activity import *
 from services.create_message import *
 from services.create_reply import *
 from services.home_activities import *
-from services.notifications_activities import *
 from services.message_groups import *
 from services.messages import *
+from services.notifications_activities import *
 from services.search_activities import *
 from services.show_activity import *
 from services.user_activities import *
@@ -30,13 +30,15 @@ cors = CORS(
 
 @app.before_first_request
 def init_rollbar():
-    rollbar.init(os.getenv("ROLLBAR_ACCESS_TOKEN"), environment='development')
+    rollbar.init(os.getenv("ROLLBAR_ACCESS_TOKEN"), environment="development")
     # send exceptions from `app` to rollbar, using flask's signal system.
     got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
 
-@app.route('/healthz')
+
+@app.route("/healthz")
 def healthz():
-    return '\nHealthy!\n\n', 200
+    return "\nHealthy!\n\n", 200
+
 
 @app.route("/api/message_groups", methods=["GET"])
 def data_message_groups():

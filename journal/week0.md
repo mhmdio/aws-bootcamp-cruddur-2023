@@ -56,4 +56,3 @@ momento configure
 ---
 
 ![arch-logical](../_docs/assets/arch-logical.png)
-

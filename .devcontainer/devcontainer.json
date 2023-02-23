@@ -1,44 +1,44 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    // "forwardPorts": [],
-  
-    // // Use 'postCreateCommand' to run commands after the container is created.
-    // "postCreateCommand": "pip3 install --user -r requirements.txt",
-  
-    // Configure tool-specific properties.
-    "customizations": {
-      // Configure properties specific to VS Code.
-      "vscode": {
-        // Add the IDs of extensions you want installed when the container is created.
-        "extensions": [
-          "streetsidesoftware.code-spell-checker",
-          "42Crunch.vscode-openapi",
-          "ahmadawais.emoji-log-vscode",
-          "amazonwebservices.aws-toolkit-vscode",
-          "bin3377.iam-policy",
-          "hashicorp.hcl",
-          "hashicorp.terraform",
-          "hediet.vscode-drawio",
-          "Infracost.infracost",
-          "ms-azuretools.vscode-docker",
-          "ms-python.isort",
-          "ms-python.python",
-          "ms-python.vscode-pylance",
-          "PKief.material-icon-theme",
-          "RapidAPI.vscode-rapidapi-client",
-          "redhat.vscode-yaml",
-          "SteefH.terraform-documentation-links",
-          "streetsidesoftware.code-spell-checker",
-          "tfsec.tfsec",
-          "timonwong.shellcheck",
-          "trunk.io",
-          "yzhang.markdown-all-in-one"
-        ]
-      }
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "pip3 install --user -r requirements.txt",
+
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "42Crunch.vscode-openapi",
+        "ahmadawais.emoji-log-vscode",
+        "amazonwebservices.aws-toolkit-vscode",
+        "bin3377.iam-policy",
+        "hashicorp.hcl",
+        "hashicorp.terraform",
+        "hediet.vscode-drawio",
+        "Infracost.infracost",
+        "ms-azuretools.vscode-docker",
+        "ms-python.isort",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "PKief.material-icon-theme",
+        "RapidAPI.vscode-rapidapi-client",
+        "redhat.vscode-yaml",
+        "SteefH.terraform-documentation-links",
+        "streetsidesoftware.code-spell-checker",
+        "tfsec.tfsec",
+        "timonwong.shellcheck",
+        "trunk.io",
+        "yzhang.markdown-all-in-one"
+      ]
     }
-  
-    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-    // "remoteUser": "root"
   }
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}

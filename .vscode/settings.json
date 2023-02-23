@@ -1,13 +1,17 @@
 {
-    "sqltools.connections": [
-        {
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 5432,
-            "driver": "PostgreSQL",
-            "username": "postgres",
-            "name": "pg-local",
-            "database": "postgres"
-        }
-    ]
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "username": "postgres",
+      "name": "pg-local",
+      "database": "postgres"
+    }
+  ],
+  "terraform.codelens.referenceCount": true,
+  "terraform.experimentalFeatures.validateOnSave": true,
+  "terraform.experimentalFeatures.prefillRequiredFields": true,
+  "editor.suggest.preview": true
 }

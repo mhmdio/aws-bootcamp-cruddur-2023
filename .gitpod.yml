@@ -12,7 +12,7 @@ tasks:
     init: |
       cd /workspace/aws-bootcamp-cruddur-2023/frontend-react-js
       npm i
-      cd .. 
+      cd ..
 # List the ports to expose. Learn more: https://www.gitpod.io/docs/configure/workspaces/ports
 ports:
   - name: Frontend
@@ -40,4 +40,3 @@ vscode:
     - mtxr.sqltools
     - mtxr.sqltools-driver-pg
     - amazonwebservices.aws-toolkit-vscode
-

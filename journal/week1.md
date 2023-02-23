@@ -1,17 +1,17 @@
 # Week 1 — App Containerization
 
-- improve Dockerfiles
-- improve docker-compose
-- improve gitpod yaml file with tasks, ports, and VSCode extensions
+- improve Dockerfiles with multi-stage builds, dockerignore, and hadolint linter
+- improve docker-compose, add HealthChecks, local dynamodb NoSQL DB and Postgre SQL DB
+- improve gitpod yaml file with tasks, ports ( dynamodb port), and VSCode extensions (AWS and SQL)
 - register and use Snyk for codebase security scanning
+- fix docker base images for frontend and backend based on Snyk findings
 - add notifications API and route to backend
 - add notifications page and route to frontend
-- add local dynamodb NoSQL DB and Postgre SQL DB to docker-compose
-- add SQL VSCODE extensions to gitpod yaml file and dynamodb table port 
-- add AWS VSCode extension to gitpod yaml file
-- add HealthCheck for backend
-- add RollBar to Frontend
-- update docker base images for frontend and backend based on Snyk findings
+- add RollBar to Frontend and Backend
+- push frontend and backend to docker hub
+- use drawio as free alternative
+- use Taskfile for DevX for cli commands
+- use dotfiles with GitPod for easy bootstrap
 
 ```bash
 docker build -t  backend-flask ./backend-flask

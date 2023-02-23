@@ -1,15 +1,28 @@
 # https://taskfile.dev
 
-version: '3'
+version: "3"
 
 env:
   REGION: eu-central-1
+  DOCKER_HUB_USERNAME: mhmdio
 
 vars:
   DevX: GitPod
   GRANTED_VERSION: 0.8.1
 
 tasks:
+  tools:install:
+    silent: true
+    cmds:
+      - trunk upgrade
+      - brew install tfsec terraform-docs hadolint
+
+  trunk:
+    silent: true
+    cmds:
+      - trunk fmt
+      - trunk check
+
   snyk:
     silent: true
     cmds:
@@ -27,7 +40,7 @@ tasks:
   granted:generate:
     cmds:
       - granted sso generate --sso-region $REGION https://$SSO_DOMAIN.awsapps.com/start
-  
+
   aws:login:
     silent: true
     cmds:
@@ -52,3 +65,12 @@ tasks:
         sso_region = $REGION
         sso_start_url = https://$SSO_DOMAIN.awsapps.com/start
         EOF
+
+  docker:push:
+    desc: push to docker hub
+    silent: true
+    cmds:
+      - docker tag aws-bootcamp-cruddur-2023-frontend-react-js $DOCKER_HUB_USERNAME/aws-bootcamp-cruddur-2023-frontend-react-js:latest
+      - docker tag aws-bootcamp-cruddur-2023-backend-flask $DOCKER_HUB_USERNAME/aws-bootcamp-cruddur-2023-backend-flask:latest
+      - docker push $DOCKER_HUB_USERNAME/aws-bootcamp-cruddur-2023-frontend-react-js:latest
+      - docker push $DOCKER_HUB_USERNAME/aws-bootcamp-cruddur-2023-backend-flask:latest
