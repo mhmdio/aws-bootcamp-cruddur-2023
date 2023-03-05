@@ -13,6 +13,9 @@
 - use Taskfile for DevX for cli commands
 - use dotfiles with GitPod for easy bootstrap
 
+
+## Docker
+
 ```bash
 docker build -t  backend-flask ./backend-flask
 export FRONTEND_URL="*"

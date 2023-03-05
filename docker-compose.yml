@@ -3,10 +3,20 @@ services:
   backend-flask:
     container_name: backend
     environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
+      OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
+      OTEL_SERVICE_NAME: "gitpod-docker-compose-backend-flask"
       FLASK_DEBUG: true
       ROLLBAR_ACCESS_TOKEN: ${ROLLBAR_ACCESS_TOKEN}
       FRONTEND_URL: "https://3000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
       BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+      AWS_XRAY_URL: "*4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}*"
+      AWS_XRAY_DAEMON_ADDRESS: "xray-daemon:2000"
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      AWS_SESSION_TOKEN: "${AWS_SESSION_TOKEN}"
+      AWS_REGION: "eu-central-1"
+      AWS_DEFAULT_REGION: "eu-central-1"
     build: ./backend-flask
     healthcheck:
       test: curl --fail -s http://localhost:4567/healthz || exit 1
@@ -63,6 +73,19 @@ services:
       - "5432:5432"
     volumes:
       - db:/var/lib/postgresql/data
+
+  xray-daemon:
+    container_name: xray-daemon
+    image: "amazon/aws-xray-daemon"
+    environment:
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      AWS_SESSION_TOKEN: "${AWS_SESSION_TOKEN}"
+      AWS_REGION: "eu-central-1"
+    command:
+      - "xray -o -b xray-daemon:2000"
+    ports:
+      - 2000:2000/udp
 
 # the name flag is a hack to change the default prepend folder
 # name when outputting the image names
