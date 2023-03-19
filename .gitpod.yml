@@ -19,10 +19,12 @@ ports:
     description: Port 3000 for the frontend
     port: 3000
     onOpen: open-browser
+    visibility: public
   - name: Backend
     description: Port 4567 for the backend
     port: 4567
     onOpen: ignore
+    visibility: public
   - name: DynamoDB
     description: Port 8000 for the DynamoDB Local
     port: 8000
