@@ -33,6 +33,10 @@ services:
     environment:
       ROLLBAR_ACCESS_TOKEN: ${ROLLBAR_ACCESS_TOKEN}
       REACT_APP_BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+      REACT_APP_AWS_PROJECT_REGION: "eu-central-1"
+      REACT_APP_AWS_COGNITO_REGION: "eu-central-1"
+      REACT_APP_AWS_USER_POOLS_ID: "eu-central-1_IXCvEYp9z"
+      REACT_APP_CLIENT_ID: "3996rt84u6cpqlf0bogtvdp8a2"
     build: ./frontend-react-js
     healthcheck:
       test: curl --fail -s http://localhost:3000/healthz || exit 1
