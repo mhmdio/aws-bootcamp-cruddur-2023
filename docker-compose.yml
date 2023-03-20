@@ -17,6 +17,8 @@ services:
       AWS_SESSION_TOKEN: "${AWS_SESSION_TOKEN}"
       AWS_REGION: "eu-central-1"
       AWS_DEFAULT_REGION: "eu-central-1"
+      AWS_COGNITO_USER_POOL_ID: "eu-central-1_cHak0stq0"
+      AWS_COGNITO_USER_POOL_CLIENT_ID: "2okh3eig7ck2cg5ha70rl6rcge"
     build: ./backend-flask
     healthcheck:
       test: curl --fail -s http://localhost:4567/healthz || exit 1
@@ -65,7 +67,7 @@ services:
     container_name: postgres
     image: postgres:13-alpine
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
       interval: 10s
       timeout: 5s
       retries: 5
